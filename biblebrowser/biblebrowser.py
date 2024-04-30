@@ -12,17 +12,16 @@ from validation import validateInput
 # Prompts the user for passages
 def userInput():
     global passageVar
-    passageVar = "\n".join(
-        [
-            str(item)
-            for item in input(
-                "Enter the passage (separate multiple passages with a comma) or enter 'today' for the daily reading: "
-            ).split(",")
-        ]
-    )
 
     try:
-        validateInput(passageVar)
+        passageVar = "\n".join(
+            [
+                validateInput(str(item))
+                for item in input(
+                    "Enter the passage (separate multiple passages with a comma) or enter 'today' for the daily reading: "
+                ).split(",")
+            ]
+        )
     except ValueError as e:
         print(e)
         return
@@ -74,5 +73,6 @@ def oBBScrape():
 
 
 # Init funcion
+# Loops through until user exits
 while True:
     userInput()

@@ -84,6 +84,12 @@ def validateInput(input):
         "Revelation",
     ]
 
+    # Remove leading and trailing whitespace
+    input = input.strip()
+
+    if input == "today" or input == "quit":
+        return input
+
     split_input = input.split()
 
     if split_input[0].isnumeric() and " ".join(split_input[0:2]) in bible_books:
@@ -96,6 +102,6 @@ def validateInput(input):
     verse = split_input[-1]
 
     if re.match("[0-9]+:[0-9]+", verse):
-        pass
+        return input
     else:
         raise ValueError("Invalid input")

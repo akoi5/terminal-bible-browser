@@ -10,7 +10,7 @@ barriers in regards to reading the Bible.
 - [x] Implement a daily reading
 - [ ] Improve the UI
 - [ ] Add user inputted query parameters
-- [ ] Implement input validation
+- [x] Implement input validation
 
 ## Usage
 After cloning the repo and installing the listed requirements via `pip`, start TBB by running the
@@ -25,3 +25,5 @@ to view. **Note:** Please use a comma (,) to separate multiple passages. For exa
 
 **Note:** Due to copyright restrictions, oremus Bible Browser will only process up to 500 verses of
 Scripture.
+
+
